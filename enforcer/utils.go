@@ -9,6 +9,13 @@ import (
 	"github.com/aporeto-inc/trireme/policy"
 )
 
+// Reporting Interface
+type Reporting interface {
+	reportFlow(p *packet.Packet, connection *TCPConnection, sourceID string, destID string, context *PUContext, action string, mode string)
+	reportAcceptedFlow(p *packet.Packet, conn *TCPConnection, sourceID string, destID string, context *PUContext)
+	reportRejectedFlow(p *packet.Packet, conn *TCPConnection, sourceID string, destID string, context *PUContext, mode string)
+}
+
 func (d *Datapath) reportFlow(p *packet.Packet, connection *TCPConnection, sourceID string, destID string, context *PUContext, action string, mode string) {
 
 	d.collector.CollectFlowEvent(&collector.FlowRecord{

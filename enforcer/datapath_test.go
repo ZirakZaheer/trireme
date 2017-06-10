@@ -1003,9 +1003,15 @@ func selectPacket(i int, t *testing.T) [2]*packet.Packet {
 }
 
 func TestFlowReportingGoodFlow(t *testing.T) {
+	// Mock Reporting interface
+
+	// Setup expectations
+
 	// Run a flow
-	// Make sure reporting was done
-	// Make sure reporting was done only once
+
+	// Make sure reporting was done - validate with mock
+
+	// Make sure reporting was done only once - validate with mock
 }
 
 func TestFlowReportingSynPacketOnlyInFlow(t *testing.T) {

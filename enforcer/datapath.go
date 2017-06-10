@@ -38,6 +38,7 @@ type PacketStats struct {
 
 // Datapath is the structure holding all information about a connection filter
 type Datapath struct {
+	reporting Reporting
 
 	// Configuration parameters
 	filterQueue    *FilterQueue
